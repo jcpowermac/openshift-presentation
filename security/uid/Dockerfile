@@ -13,7 +13,17 @@ RUN pip install -U setuptools ara==0.14.6
 EXPOSE 8080
 USER 10001
 
-# This will break because of random uid...
+ENV APP_ROOT=/opt/app-root
+ENV PATH=${APP_ROOT}/bin:${PATH} HOME=${APP_ROOT}
+ENV ARA_PORT="8080"
+ENV ARA_HOST="0.0.0.0"
+ENV ARA_DIR=${APP_ROOT}
+
+COPY bin/ ${APP_ROOT}/bin/
+RUN chmod -R u+x ${APP_ROOT}/bin && \
+    chgrp -R 0 ${APP_ROOT}
+
+# I want this to break with a uid specific message
 ENTRYPOINT [ "ara-manage" ]
 CMD runserver
 
