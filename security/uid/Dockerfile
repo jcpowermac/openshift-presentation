@@ -11,7 +11,6 @@ RUN dnf install -y python2-pip \
 RUN pip install -U setuptools ara==0.14.6
 
 EXPOSE 8080
-USER 10001
 
 ENV APP_ROOT=/opt/app-root
 ENV PATH=${APP_ROOT}/bin:${PATH} HOME=${APP_ROOT}
@@ -23,6 +22,7 @@ ENV ARA_DIR=${APP_ROOT}
 RUN mkdir -p ${APP_ROOT}/bin && \
     chmod -R u+x ${APP_ROOT}/bin && \
     chgrp -R 0 ${APP_ROOT}
+USER 10001
 
 # I want this to break with a uid specific message
 ENTRYPOINT [ "ara-manage" ]
