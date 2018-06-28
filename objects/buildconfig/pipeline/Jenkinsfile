@@ -1,0 +1,14 @@
+#!groovy
+
+node {
+    stage('Hello,World') {
+        echo 'Hello, World'
+    }
+    stage('OpenShift - Hello, World') {
+        openshift.withCluster() {
+            openshift.withProject() {
+                echo "Hello from project ${openshift.project()} in cluster ${openshift.cluster()}"
+            }
+        }
+    }
+}

@@ -1,0 +1,16 @@
+---
+apiVersion: v1
+kind: BuildConfig
+metadata:
+  name: pipeline
+spec:
+  source:
+    type: Git
+    git:
+      uri: https://github.com/jcpowermac/openshift-presentation
+      ref: master
+  strategy:
+    type:
+    jenkinsPipelineStrategy:
+      jenkinsfilePath: objects/pipeline/Jenkinsfile
+  triggers: {}

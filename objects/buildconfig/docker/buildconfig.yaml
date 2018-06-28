@@ -1,0 +1,22 @@
+---
+apiVersion: v1
+kind: BuildConfig
+metadata:
+  name: ara
+spec:
+  strategy:
+    type: Docker
+  output:
+    to:
+      kind: ImageStreamTag
+      name: ara:latest
+  source:
+    git:
+      uri: "https://github.com/jcpowermac/openshift-presentation"
+      ref: "master"
+    contextDir: objects/buildconfig/docker
+    type: Docker
+  triggers:
+  - type: ConfigChange
+  - imageChange: {}
+    type: ImageChange
