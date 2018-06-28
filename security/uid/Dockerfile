@@ -27,5 +27,5 @@ USER 10001
 
 # I want this to break with a uid specific message
 ENTRYPOINT [ "ara-manage" ]
-CMD runserver
+CMD ["runserver"]
 
