@@ -19,7 +19,7 @@ ENV ARA_PORT="8080"
 ENV ARA_HOST="0.0.0.0"
 ENV ARA_DIR=${APP_ROOT}
 
-COPY bin/ ${APP_ROOT}/bin/
+#COPY bin/ ${APP_ROOT}/bin/
 RUN chmod -R u+x ${APP_ROOT}/bin && \
     chgrp -R 0 ${APP_ROOT}
 
