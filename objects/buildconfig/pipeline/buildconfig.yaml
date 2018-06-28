@@ -12,5 +12,5 @@ spec:
   strategy:
     type:
     jenkinsPipelineStrategy:
-      jenkinsfilePath: objects/pipeline/Jenkinsfile
+      jenkinsfilePath: objects/buildconfig/pipeline/Jenkinsfile
   triggers: {}

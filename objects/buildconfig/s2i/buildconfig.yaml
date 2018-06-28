@@ -1,0 +1,27 @@
+---
+apiVersion: build.openshift.io/v1
+kind: BuildConfig
+metadata:
+  name: nodejs-mongodb-example
+spec:
+  output:
+    to:
+      kind: ImageStreamTag
+      name: nodejs-mongodb-example:latest
+  postCommit:
+    script: npm test
+  source:
+    git:
+      uri: https://github.com/openshift/nodejs-ex.git
+    type: Git
+  strategy:
+    sourceStrategy:
+      env:
+      - name: NPM_MIRROR
+      from:
+        kind: ImageStreamTag
+        name: nodejs:6
+        namespace: openshift
+    type: Source
+  triggers:
+  - type: ConfigChange
