@@ -21,7 +21,7 @@ ENV ARA_DIR=${APP_ROOT}
 #COPY bin/ ${APP_ROOT}/bin/
 RUN mkdir -p ${APP_ROOT}/.ansible/ && \
     mkdir -p ${APP_ROOT}/bin/ && \
-    chmod -R u+x ${APP_ROOT}/bin && \
+    chmod -R 770 ${APP_ROOT} && \
     chgrp -R 0 ${APP_ROOT}
 USER 10001
 
