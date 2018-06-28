@@ -20,7 +20,7 @@ ENV ARA_HOST="0.0.0.0"
 ENV ARA_DIR=${APP_ROOT}
 
 #COPY bin/ ${APP_ROOT}/bin/
-RUN chmod -R u+x ${APP_ROOT}/bin && \
+RUN chmod -R u+x ${APP_ROOT} && \
     chgrp -R 0 ${APP_ROOT}
 
 # I want this to break with a uid specific message
