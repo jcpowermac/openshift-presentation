@@ -1,0 +1,37 @@
+---
+apiVersion: v1
+kind: DeploymentConfig
+metadata:
+  labels:
+    app: ara
+  name: ara
+spec:
+  replicas: 1
+  selector:
+    app: ara
+  strategy:
+    type: Rolling
+  template:
+    metadata:
+      labels:
+        app: ara
+    spec:
+      containers:
+      - env:
+        - name: ARA_HOST
+          value: 0.0.0.0
+        - name: ARA_PORT
+          value: "8080"
+        - name: ARA_DATABASE
+          value: postgresql+psycopg2://ara:password@postgresql:5432/ara
+        image: quay.io/jcallen/ara
+        imagePullPolicy: Always
+        name: ara
+        ports:
+        - containerPort: 8080
+          protocol: TCP
+      dnsPolicy: ClusterFirst
+      restartPolicy: Always
+      terminationGracePeriodSeconds: 30
+  triggers:
+  - type: ConfigChange
