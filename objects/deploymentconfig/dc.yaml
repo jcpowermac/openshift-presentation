@@ -22,9 +22,8 @@ spec:
           value: 0.0.0.0
         - name: ARA_PORT
           value: "8080"
-        - name: ARA_DATABASE
-          value: postgresql+psycopg2://ara:password@postgresql:5432/ara
-        image: quay.io/jcallen/ara
+        image: ''
+        name: ara
         imagePullPolicy: Always
         name: ara
         ports:
@@ -35,3 +34,11 @@ spec:
       terminationGracePeriodSeconds: 30
   triggers:
   - type: ConfigChange
+  - imageChangeParams:
+      automatic: true
+      containerNames:
+        - ara
+      from:
+        kind: ImageStreamTag
+        name: 'ara:latest'
+    type: ImageChange
