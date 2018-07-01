@@ -49,7 +49,7 @@ sudo docker rm -f ${UUID}
 
 # prepull
 
-IMAGES=("docker.io/openshift/origin-node:v3.10" "docker.io/openshift/origin-control-plane:v3.10" "docker.io/openshift/origin:v3.10" "docker.io/openshift/origin-hypershift:v3.10" "docker.io/openshift/origin-hyperkube:v3.10" "docker.io/openshift/origin-pod:v3.10" "docker.io/automationbroker/automation-broker-apb:latest" "docker.io/openshift/origin-cli:v3.10")
+IMAGES=("docker.io/openshift/origin-node:v3.10" "docker.io/openshift/origin-control-plane:v3.10" "docker.io/openshift/origin:v3.10" "docker.io/openshift/origin-hypershift:v3.10" "docker.io/openshift/origin-hyperkube:v3.10" "docker.io/openshift/origin-pod:v3.10" "docker.io/automationbroker/automation-broker-apb:latest" "docker.io/openshift/origin-cli:v3.10" "quay.io/coreos/etcd:v3.3" "docker.io/openshift/origin-service-catalog:v3.10" "docker.io/openshift/origin-template-service-broker:v3.10" "docker.io/ansibleplaybookbundle/origin-ansible-service-broker:latest" "docker.io/openshift/origin-web-console:v3.10" "docker.io/openshift/origin-docker-registry:v3.10" "docker.io/openshift/jenkins-2-centos7:v3.10" "docker.io/centos/nodejs-6-centos7:latest")
 
 for i in ${IMAGES[@]}; do
  sudo docker pull ${i}

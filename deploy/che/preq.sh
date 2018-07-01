@@ -18,3 +18,4 @@ EOF
 sudo systemctl start docker
 
 
+sudo docker pull quay.io/jcallen/che-apb
