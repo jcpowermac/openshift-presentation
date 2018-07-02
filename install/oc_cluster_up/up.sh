@@ -18,12 +18,3 @@ sudo podman run -it --rm --net host --privileged \
     openshift/origin:v3.10.0 \
     ${OC_ARGS} ${CLUSTER_UP_ARGS}
 
-#sudo podman run -it --rm --net host --privileged \
-#    --entrypoint=${OC_BIN} \
-#    -v /tmp/origin:/tmp/origin:Z \
-#    -v /var/run/docker.sock:/var/run/docker.sock:Z \
-#    openshift/origin:v3.10.0 \
-#    cluster up \
-#    --public-hostname 10.53.4.20.nip.io \
-#    --routing-suffix apps.10.53.4.20.nip.io \
-#    --base-dir /tmp/origin
