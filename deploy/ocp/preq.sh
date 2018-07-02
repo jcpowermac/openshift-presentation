@@ -37,4 +37,4 @@ EOF
 
 systemctl start docker
 
-
+wget https://raw.githubusercontent.com/jcpowermac/openshift-presentation/master/install/ansible/hosts.ini
