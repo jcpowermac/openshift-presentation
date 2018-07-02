@@ -3,11 +3,11 @@ set -x
 
 
 HOSTNAME=`curl http://169.254.169.254/latest/meta-data/public-ipv4`
-mkdir -p /che/data
-mkdir -p /che/sync
-mkdir -p /che/unison
+sudo mkdir -p /che/data
+sudo mkdir -p /che/sync
+sudo mkdir -p /che/unison
 
-setenforce 0
+sudo setenforce 0
 
 sudo docker run -it --rm \
     -e CHE_MULTIUSER=true \

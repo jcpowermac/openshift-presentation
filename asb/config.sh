@@ -3,4 +3,7 @@
 
 set -x
 
-oc -o yaml get configmap <name> -n openshift-ansible-service-broker
+oc -o yaml get configmap broker-config -n openshift-automation-service-broker
+
+
+

@@ -11,4 +11,5 @@ oc create -f buildconfig.yaml
 
 oc logs -f bc/ara
 
+oc delete project ansible
 
