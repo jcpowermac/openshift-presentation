@@ -8,5 +8,5 @@ oc create -f buildconfig.yaml
 
 oc get pod --watch
 
-oc start-build pipeline
+oc start-build --follow=true pipeline
 oc logs -f bc/pipeline
