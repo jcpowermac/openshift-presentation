@@ -2,6 +2,9 @@
 
 set -x
 
+#ansible -i 172.31.9.69, -u centos -b -m fetch -a "src=/tmp/origin/kube-apiserver/admin.kubeconfig dest=./ flat=yes" --private-key keypair.pem all
+
+
 oc get scc
 oc describe scc restricted
 oc describe scc anyuid
