@@ -14,5 +14,5 @@ sudo mkdir -p /tmp/origin
 sudo /usr/bin/oc cluster up --enable=${ENABLE} --public-hostname=${PUBLIC_HOSTNAME} --routing-suffix=${ROUTING_SUFFIX} --base-dir=/tmp/origin
 
 
-/usr/bin/oc login ${PUBLIC_HOSTNAME} --username=developer --password=dev --insecure-skip-tls-verify=true
-/usr/bin/oc --config /tmp/origin/kube-apiserver/admin.kubeconfig get dc --all-namespaces
+#/usr/bin/oc login ${PUBLIC_HOSTNAME}:8443 --username=developer --password=dev --insecure-skip-tls-verify=true
+sudo /usr/bin/oc --config /tmp/origin/kube-apiserver/admin.kubeconfig get dc --all-namespaces
