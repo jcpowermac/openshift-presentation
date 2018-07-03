@@ -25,7 +25,6 @@ spec:
         image: ''
         name: ara
         imagePullPolicy: Always
-        name: ara
         ports:
         - containerPort: 8080
           protocol: TCP

@@ -7,6 +7,7 @@ subscription-manager repos --disable="*"
 subscription-manager config --rhsm.auto_enable_yum_plugins=0
 
 subscription-manager register --username='jcallen@redhat.com'
+subscription-manager register --username='jcallen@redhat.com'
 
 subscription-manager attach --pool=8a85f98260c27fc50160c328c08a5045
 
